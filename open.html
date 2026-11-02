@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Open your private SecureLink message securely.">
+
+    <title>Open Secure Message | SecureLink</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header class="navbar">
+
+        <div class="container nav-content">
+
+            <a href="index.html" class="logo">
+                Secure<span>Link</span>
+            </a>
+
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="index.html#features">Features</a>
+                <a href="index.html#how-it-works">How It Works</a>
+            </nav>
+
+            <a href="index.html" class="btn btn-outline nav-button">
+                Back Home
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <!-- Open Message Section -->
+    <main class="open-page">
+
+        <div class="container">
+
+            <div class="open-heading">
+
+                <span class="section-label">
+                    SECURE MESSAGE ACCESS
+                </span>
+
+                <h1>
+                    Your Private <span>Message</span>
+                </h1>
+
+                <p>
+                    A secure message has been shared with you.
+                    Open it privately on this device.
+                </p>
+
+            </div>
+
+
+            <!-- Loading Card -->
+            <section class="open-card" id="loading-card">
+
+                <div class="loading-spinner"></div>
+
+                <h2>Loading Secure Message</h2>
+
+                <p>
+                    Please wait while we retrieve your encrypted message.
+                </p>
+
+            </section>
+
+
+            <!-- Initial Card -->
+            <section class="open-card" id="initial-card" hidden>
+
+                <div class="open-icon">🔐</div>
+
+                <h2>Ready to Open Your Message?</h2>
+
+                <p>
+                    Your message will be decrypted locally
+                    using the private key included in your link.
+                </p>
+
+                <button
+                    type="button"
+                    class="btn btn-primary open-button"
+                    id="open-message-button"
+                >
+                    Decrypt & View Message
+                    <span>→</span>
+                </button>
+
+                <p class="open-note">
+                    Make sure you are using the complete secure link.
+                </p>
+
+            </section>
+
+
+            <!-- Message Result -->
+            <section class="open-card message-result" id="message-result" hidden>
+
+                <div class="success-icon">✓</div>
+
+                <h2>Message Decrypted Successfully</h2>
+
+                <p class="message-label">
+                    YOUR PRIVATE MESSAGE
+                </p>
+
+                <div
+                    class="decrypted-message"
+                    id="decrypted-message"
+                    dir="auto"
+                ></div>
+
+                <p class="message-security-note">
+                    🔒 This message was decrypted locally on your device.
+                </p>
+
+            </section>
+
+
+            <!-- Error Card -->
+            <section class="open-card error-card" id="open-error-card" hidden>
+
+                <div class="error-icon">!</div>
+
+                <h2>Unable to Open Message</h2>
+
+                <p id="open-error-text">
+                    Something went wrong.
+                </p>
+
+                <a href="index.html" class="btn btn-secondary">
+                    Return Home
+                </a>
+
+            </section>
+
+
+            <!-- Security Information -->
+            <div class="open-security">
+
+                <span>🛡️</span>
+
+                <p>
+                    SecureLink uses AES-256-GCM encryption
+                    to protect your confidential messages.
+                </p>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+
+        <div class="container footer-content">
+
+            <a href="index.html" class="logo">
+                Secure<span>Link</span>
+            </a>
+
+            <p>
+                Secure communication. Private by design.
+            </p>
+
+            <p class="copyright">
+                © <span id="current-year"></span>
+                SecureLink. All rights reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>

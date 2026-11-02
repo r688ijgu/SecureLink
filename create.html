@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Create and encrypt a private message with SecureLink.">
+
+    <title>Create Secure Message | SecureLink</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header class="navbar">
+        <div class="container nav-content">
+
+            <a href="index.html" class="logo">
+                Secure<span>Link</span>
+            </a>
+
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="index.html#features">Features</a>
+                <a href="index.html#how-it-works">How It Works</a>
+            </nav>
+
+            <a href="index.html" class="btn btn-outline nav-button">
+                Back Home
+            </a>
+
+        </div>
+    </header>
+
+
+    <!-- Create Message -->
+    <main class="create-page">
+
+        <div class="container">
+
+            <div class="create-heading">
+                <span class="section-label">PRIVATE MESSAGE CREATOR</span>
+
+                <h1>
+                    Create a <span>Secure Message</span>
+                </h1>
+
+                <p>
+                    Write your message, choose your settings,
+                    and generate a secure sharing link.
+                </p>
+            </div>
+
+
+            <div class="create-layout">
+
+                <!-- Form Card -->
+                <section class="create-card">
+
+                    <div class="form-card-heading">
+                        <div>
+                            <h2>Compose Your Message</h2>
+                            <p>Your message will be encrypted on this device.</p>
+                        </div>
+
+                        <span class="form-lock">🔒</span>
+                    </div>
+
+
+                    <form id="message-form">
+
+                        <div class="form-group">
+
+                            <label for="secret-message">
+                                Your Secret Message
+                            </label>
+
+                            <textarea
+                                id="secret-message"
+                                name="message"
+                                placeholder="Write your confidential message here..."
+                                maxlength="5000"
+                                required
+                            ></textarea>
+
+                            <div class="textarea-footer">
+                                <span>Keep your information private.</span>
+                                <span id="char-count">0 / 5000</span>
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-row">
+
+                            <div class="form-group">
+
+                                <label for="expiry">
+                                    Message Expiration
+                                </label>
+
+                                <select id="expiry" name="expiry">
+                                    <option value="1">1 Hour</option>
+                                    <option value="24" selected>24 Hours</option>
+                                    <option value="72">3 Days</option>
+                                    <option value="168">7 Days</option>
+                                </select>
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="max-views">
+                                    Maximum Retrievals
+                                </label>
+
+                                <select id="max-views" name="maxViews">
+                                    <option value="1">1 Retrieval</option>
+                                    <option value="3">3 Retrievals</option>
+                                    <option value="5" selected>5 Retrievals</option>
+                                    <option value="10">10 Retrievals</option>
+                                </select>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="privacy-notice">
+
+                            <span class="notice-icon">🛡️</span>
+
+                            <div>
+                                <strong>End-to-End Encryption</strong>
+
+                                <p>
+                                    Your message is encrypted in your browser.
+                                    The server receives only encrypted data,
+                                    never your encryption key.
+                                </p>
+                            </div>
+
+                        </div>
+
+
+                        <button
+                            type="submit"
+                            class="btn btn-primary generate-button"
+                            id="generate-button"
+                        >
+                            Encrypt & Generate Link
+                            <span>→</span>
+                        </button>
+
+                        <p class="form-disclaimer">
+                            Do not close this page while your secure link is being generated.
+                        </p>
+
+                    </form>
+
+                </section>
+
+
+                <!-- Side Information -->
+                <aside class="create-sidebar">
+
+                    <div class="sidebar-card">
+
+                        <div class="sidebar-icon">🔐</div>
+
+                        <h3>Your Privacy Matters</h3>
+
+                        <p>
+                            SecureLink is designed to protect your
+                            confidential messages using modern
+                            encryption technology.
+                        </p>
+
+                        <div class="sidebar-divider"></div>
+
+                        <div class="security-item">
+                            <span>✓</span>
+                            Local message encryption
+                        </div>
+
+                        <div class="security-item">
+                            <span>✓</span>
+                            AES-256-GCM encryption
+                        </div>
+
+                        <div class="security-item">
+                            <span>✓</span>
+                            Private encryption key
+                        </div>
+
+                        <div class="security-item">
+                            <span>✓</span>
+                            Secure sharing link
+                        </div>
+
+                    </div>
+
+
+                    <div class="sidebar-tip">
+
+                        <span>💡</span>
+
+                        <div>
+                            <strong>Security Tip</strong>
+
+                            <p>
+                                Share your generated link only with
+                                the person you intend to receive
+                                the message.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </aside>
+
+            </div>
+
+
+            <!-- Result Area -->
+            <section class="result-card" id="result-card" hidden>
+
+                <div class="result-icon">✓</div>
+
+                <h2>Your Secure Message Is Ready!</h2>
+
+                <p>
+                    Copy the link and share it with your recipient.
+                    Keep the full link private.
+                </p>
+
+                <div class="generated-link">
+                    <input
+                        type="text"
+                        id="generated-link"
+                        readonly
+                        aria-label="Generated secure link"
+                    >
+
+                    <button
+                        type="button"
+                        class="btn btn-primary"
+                        id="copy-link"
+                    >
+                        Copy Link
+                    </button>
+                </div>
+
+                <p class="result-warning">
+                    Anyone with the complete link may be able to decrypt
+                    the message. Share it carefully.
+                </p>
+
+                <button
+                    type="button"
+                    class="btn btn-secondary"
+                    id="create-another"
+                >
+                    Create Another Message
+                </button>
+
+            </section>
+
+
+            <!-- Error Area -->
+            <div class="error-message" id="error-message" role="alert" hidden></div>
+
+        </div>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+
+        <div class="container footer-content">
+
+            <a href="index.html" class="logo">
+                Secure<span>Link</span>
+            </a>
+
+            <p>Secure communication. Private by design.</p>
+
+            <p class="copyright">
+                © <span id="current-year"></span> SecureLink.
+                All rights reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <script src="js/main.js"></script>
+
+</body>
+</html>
